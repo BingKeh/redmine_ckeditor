@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rich', git: 'https://github.com/a-ono/rich.git', tag: '1.5.2'
+gem 'rich', git: 'https://github.com/BingKeh/rich.git'
 gem 'kaminari'
 gem 'htmlentities'
-gem 'paperclip', '~> 6.1.0'
+gem 'paperclip', git: "https://github.com/BingKeh/paperclip.git"
 gem 'pandoc-ruby'
 
 # It is needed for upgrading CKEditor
