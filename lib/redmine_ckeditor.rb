@@ -138,12 +138,17 @@ module RedmineCkeditor
   end
 end
 
-require 'redmine_ckeditor/helper'
-require 'redmine_ckeditor/application_helper_patch'
-require 'redmine_ckeditor/queries_helper_patch'
-require 'redmine_ckeditor/rich_files_helper_patch'
-require 'redmine_ckeditor/journals_controller_patch'
-require 'redmine_ckeditor/messages_controller_patch'
-require 'redmine_ckeditor/mail_handler_patch'
-require 'redmine_ckeditor/pdf_patch'
-require 'redmine_ckeditor/tempfile_patch'
+REDMINE_AGILE_REQUIRED_FILES = [
+  'redmine_ckeditor/helper',
+  'redmine_ckeditor/application_helper_patch',
+  'redmine_ckeditor/queries_helper_patch',
+  'redmine_ckeditor/rich_files_helper_patch',
+  'redmine_ckeditor/journals_controller_patch',
+  'redmine_ckeditor/messages_controller_patch',
+  'redmine_ckeditor/mail_handler_patch',
+  'redmine_ckeditor/pdf_patch',
+  'redmine_ckeditor/tempfile_patch'
+]
+
+base_url = File.dirname(__FILE__)
+REDMINE_AGILE_REQUIRED_FILES.each { |file| require(base_url + '/' + file) }

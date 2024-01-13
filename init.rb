@@ -1,5 +1,5 @@
 require 'redmine'
-require 'redmine_ckeditor'
+require File.dirname(__FILE__) + '/lib/redmine_ckeditor'
 
 ActiveSupport::Reloader.to_prepare do
   RedmineCkeditor.apply_patch
