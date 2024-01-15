@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rich', git: 'https://github.com/BingKeh/rich.git'
+gem 'rich', git: 'https://github.com/BingKeh/rich.git', tag: 'v2.0.0'
 gem 'kaminari'
 gem 'htmlentities'
 gem 'paperclip', git: "https://github.com/BingKeh/paperclip.git"

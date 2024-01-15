@@ -38,7 +38,7 @@ module RedmineCkeditor
       else
         # for CKEditor file uploader with 'rich' plugin
         img = if attrname.include?("/rich/rich_files/rich_files/")
-          Rails.root.join("public#{URI.decode(attrname)}").to_s
+          Rails.root.join("public#{URI::DEFAULT_PARSER.unescape(attrname)}").to_s
         else
           super(attrname)
         end
