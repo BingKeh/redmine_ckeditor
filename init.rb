@@ -1,9 +1,6 @@
 require 'redmine'
 require File.dirname(__FILE__) + '/lib/redmine_ckeditor'
 
-ActiveSupport::Reloader.to_prepare do
-  RedmineCkeditor.apply_patch
-end
 
 Redmine::Plugin.register :redmine_ckeditor do
   name 'Redmine CKEditor plugin'
@@ -18,5 +15,7 @@ Redmine::Plugin.register :redmine_ckeditor do
   wiki_format_provider 'CKEditor', RedmineCkeditor::WikiFormatting::Formatter,
     RedmineCkeditor::WikiFormatting::Helper
 end
+
+RedmineCkeditor.apply_patch
 
 (Loofah::VERSION >= "2.3.0" ? Loofah::HTML5::SafeList : Loofah::HTML5::WhiteList)::ALLOWED_PROTOCOLS.replace RedmineCkeditor.allowed_protocols
